@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>崔俪娜 Lina Cui - Resume</title>
+    <style>
+      :root {
+        --bg: #151b24;
+        --bg-2: #1d2330;
+        --panel: #202838;
+        --panel-soft: rgba(255, 255, 255, 0.055);
+        --line: rgba(255, 255, 255, 0.12);
+        --text: #f5f1ea;
+        --muted: #b6bdc8;
+        --quiet: #7f8998;
+        --orange: #ff7a1a;
+        --orange-2: #ff9b4a;
+        --tag-warm-light: #feeaf0;
+        --tag-gold: #f09410;
+        --tag-rust: #bc430d;
+        --radius: 8px;
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(22, 44, 58, 0.58) 0%, rgba(21, 27, 36, 0) 520px),
+          radial-gradient(circle at 86% 22%, rgba(255, 122, 26, 0.14), transparent 26%),
+          linear-gradient(180deg, var(--bg) 0%, #121721 100%);
+        color: var(--text);
+        font-family:
+          Inter, "Inter Tight", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+          Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(21, 27, 36, 0.74);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        width: min(var(--max), calc(100% - 40px));
+        height: 72px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.38);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(22px, 5vw, 72px);
+        color: #cbd2dc;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        opacity: 0.82;
+      }
+
+      .nav-links a:hover,
+      .nav-links .active {
+        color: var(--orange);
+        opacity: 1;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .hero {
+        width: min(var(--max), calc(100% - 40px));
+        min-height: 620px;
+        margin: 0 auto;
+        display: block;
+        padding: 76px 0 88px;
+      }
+
+      .eyebrow {
+        margin: 0 0 20px;
+        color: var(--orange);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 980px;
+        margin: 0;
+        font-size: clamp(58px, 9.4vw, 132px);
+        line-height: 1.03;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .name-line {
+        display: block;
+        font-size: 0.72em;
+      }
+
+      .title-line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .orange {
+        color: var(--orange);
+      }
+
+      .hero-copy {
+        max-width: 900px;
+        margin: 30px 0 0;
+        color: #d8dde6;
+        font-size: clamp(18px, 2.2vw, 24px);
+        line-height: 1.65;
+        font-weight: 650;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+      }
+
+      .tag {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.045);
+        color: #eef1f5;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .portrait-card {
+        position: relative;
+        align-self: center;
+        min-height: 438px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        padding: 18px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      }
+
+      .portrait-frame {
+        height: 300px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: #dfe8e5;
+      }
+
+      .portrait-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%;
+        display: block;
+      }
+
+      .role-card {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: var(--radius);
+        background: rgba(13, 17, 24, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .role-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text);
+        font-size: 18px;
+      }
+
+      .role-card span {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .content {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        padding-bottom: 96px;
+      }
+
+      .section {
+        padding: 72px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .section-head {
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        margin: 0;
+        color: var(--orange);
+        font-size: clamp(18px, 2.4vw, 28px);
+        line-height: 1.1;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
+      .experience {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 48px;
+        padding: 30px;
+        border-radius: var(--radius);
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+      }
+
+      .meta {
+        color: var(--quiet);
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.55;
+        text-transform: uppercase;
+      }
+
+      .meta .company {
+        display: block;
+        color: var(--text);
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        text-transform: none;
+      }
+
+      .experience p,
+      .project p,
+      .skill-box p,
+      .education p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.78;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .project {
+        min-height: 390px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+        border: 1px solid var(--line);
+      }
+
+      .project-number {
+        color: var(--orange);
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      h3 {
+        margin: 18px 0;
+        color: var(--text);
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.1;
+        font-weight: 950;
+      }
+
+      .impact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 26px;
+      }
+
+      .impact span {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.045);
+        color: #eef1f5;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+      }
+
+      .skill-box,
+      .education {
+        padding: 28px;
+        border-radius: var(--radius);
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+      }
+
+      .skill-box {
+        display: flex;
+        align-items: center;
+      }
+
+      .skill-list {
+        width: 100%;
+        display: grid;
+        gap: 26px;
+      }
+
+      .skill-line {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .skill-line:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .skill-label {
+        color: var(--orange);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .education-list {
+        display: grid;
+        gap: 26px;
+      }
+
+      .school {
+        display: block;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .degree {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 16px;
+        font-weight: 650;
+        line-height: 1.6;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 32px 0 42px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--quiet);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .contact-link {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0 22px;
+        background: var(--orange);
+        color: #17130f;
+        font-weight: 950;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          height: auto;
+          min-height: 68px;
+          gap: 18px;
+        }
+
+        .nav-links {
+          gap: 14px;
+          font-size: 11px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 54px;
+        }
+
+        .portrait-card {
+          max-width: 360px;
+        }
+
+        .experience,
+        .two-col {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav {
+          width: min(100% - 28px, var(--max));
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 16px 0;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+
+        .hero,
+        .content {
+          width: min(100% - 28px, var(--max));
+        }
+
+        h1 {
+          font-size: clamp(48px, 17vw, 78px);
+        }
+
+        .experience,
+        .project,
+        .skill-box,
+        .education {
+          padding: 22px;
+        }
+
+        .skill-line {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="https://linacui.framer.website/" aria-label="返回首页">
+          <img class="avatar" src="https://framerusercontent.com/images/gXTgKJst3tEQ6mZaqTqmq5rTY.png?width=928&height=1039" alt="Lina Cui avatar" />
+        </a>
+        <div class="nav-links">
+          <a class="active" href="#">简历 /RESUME</a>
+          <a href="https://linacui.framer.website/#list">作品 /WORKS</a>
+          <a href="https://linacui.framer.website/photos">影像集 /PHOTOGRAPHS</a>
+          <a href="https://linacui.framer.website/contact">联系 /CONTACT</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Resume / Portfolio Profile</p>
+          <h1>
+            <span class="name-line">Lina Cui</span>
+            <span class="title-line"><span class="orange">UX</span> Designer</span>
+          </h1>
+          <p class="hero-copy">
+            擅长从复杂系统中抽象清晰的交互路径<br />
+            将前瞻概念、AI 能力与车端量产场景结合，推动体验从概念验证走向真实落地
+          </p>
+          <div class="tags" aria-label="核心能力标签">
+            <span class="tag">系统级 HMI 设计</span>
+            <span class="tag">AI 体验创新</span>
+            <span class="tag">设计规范与平台化</span>
+            <span class="tag">从概念到量产</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="content">
+        <section class="section" id="experience">
+          <div class="section-head">
+            <h2>Work<br />Experience</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="experience">
+              <div class="meta">
+                <span class="company">智己汽车 IM Motors</span>
+                2024.10 - Present<br />
+                整车软件智能中心<br />
+                高级交互设计师
+              </div>
+              <p>
+                负责 IMOS 4.0 主交互框架、系统设计规范、车端影音娱乐生态体验<br />
+                自研 AI 生产力工具的交互定义与流程设计
+              </p>
+            </article>
+
+            <article class="experience">
+              <div class="meta">
+                <span class="company">吉利汽车研究院</span>
+                2021.03 - 2024.10<br />
+                领克品牌研究院 / UX 设计师 + 设计管理<br />
+                智能座舱中心 / UE 设计师
+              </div>
+              <p>
+                参与领克、吉利品牌多车型智能座舱体验设计<br />
+                负责不同品牌平台化规范、主框架、硬按键、方向盘控制、仪表与中控等系统级交互设计<br />
+                承担部分供应商 HMI 设计质量与交付管理
+              </p>
+            </article>
+
+            <article class="experience">
+              <div class="meta">
+                <span class="company">海康威视 Hikvision</span>
+                2020.05 - 2021.03<br />
+                软件业务中心 / 智慧安检业务中心<br />
+                UX 设计师
+              </div>
+              <p>
+                负责交通轨道业务与智慧安检平台的 B 端 / C 端全链路体验设计，将复杂业务逻辑转化为高效操作流程<br />
+                主导智慧安检硬件设备操作系统设计，平衡工业硬件限制与软件交互便利性
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-head">
+            <h2>Representative<br />Projects</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project">
+              <div>
+                <span class="project-number">PROJECT 01</span>
+                <h3>IMOS 智能座舱系统架构迭代</h3>
+                <p>
+                  负责 IMOS 4.0 主交互框架定义、系统设计规范制定与公控组件协同研发，沉淀可复用的系统级设计体系。在车载多模态搜索体验中，基于 AI Agent 能力打通语音与三方生态，通过意图分流、联想推荐与结果展示优化提升搜索体验
+                </p>
+              </div>
+              <div class="impact">
+                <span>设计效率提升 30%</span>
+                <span>海外适配 3 个月缩短至 1 个月</span>
+                <span>搜索满意度 45% 提升至 78%</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div>
+                <span class="project-number">PROJECT 02</span>
+                <h3>IM-AI 车机主题生成与推送平台</h3>
+                <p>
+                  参与 AI 车机主题平台的产品定义与底层业务架构梳理，负责从 AI 生成逻辑、参数配置到云端推送的全链路交互体验设计。基于 AIGC 能力重构车机主题设计开发工作流
+                </p>
+              </div>
+              <div class="impact">
+                <span>主题设计开发 3 个月缩短至 1 周</span>
+                <span>多尺寸自动适配</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div>
+                <span class="project-number">PROJECT 03</span>
+                <h3>领克第二代 HMI 设计</h3>
+                <p>
+                  联合瑞典设计团队定义领克第二代 HMI 设计策略，将前瞻概念转化为可量产方案，并面向国内平台项目组进行设计解读与决策汇报。深度参与 Flyme Auto 与吉利产品线系统规范，负责整车级体验链路设计
+                </p>
+              </div>
+              <div class="impact">
+                <span>国际协作</span>
+                <span>概念到量产</span>
+                <span>HUD / 仪表 / 中控</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div>
+                <span class="project-number">PROJECT 04</span>
+                <h3>Lynk OSN 体验优化</h3>
+                <p>
+                  主导建立领克品牌首套原子化设计规范，定义系统级可复用流程，形成面向设计、开发与 QA 团队的标准化指南。参与 08、06 EMP 等车型上市驻店调研，通过用户决策要素分析反哺设计迭代
+                </p>
+              </div>
+              <div class="impact">
+                <span>原子化设计规范</span>
+                <span>体验一致性</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="skills">
+          <div class="section-head">
+            <h2>Capability<br />Stack</h2>
+          </div>
+
+          <div class="two-col">
+            <article class="skill-box">
+              <div class="skill-list">
+                <div class="skill-line">
+                  <span class="skill-label">交互设计</span>
+                  <p>Figma / Protopie / Framer</p>
+                </div>
+                <div class="skill-line">
+                  <span class="skill-label">AI 工具</span>
+                  <p>ComfyUI / Codex / Hermes Agent</p>
+                </div>
+                <div class="skill-line">
+                  <span class="skill-label">语言能力</span>
+                  <p>英语 CET-6 / 德语 TestDaF 16</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="education">
+              <div class="education-list">
+                <p>
+                  <span class="school">奥格斯堡应用技术大学</span>
+                  <span class="degree">交互媒体系统 / 硕士</span>
+                </p>
+                <p>
+                  <span class="school">包豪斯大学</span>
+                  <span class="degree">语言中心 / 德语</span>
+                </p>
+                <p>
+                  <span class="school">哈尔滨工业大学</span>
+                  <span class="degree">工业设计 / 本科</span>
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>© Lina Cui Resume / UX, HMI & AI Experience Design</span>
+          <a class="contact-link" href="https://linacui.framer.website/contact">联系 /CONTACT</a>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
