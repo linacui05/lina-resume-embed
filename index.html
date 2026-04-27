@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-CN">
   <head>
@@ -47,51 +48,6 @@
       a {
         color: inherit;
         text-decoration: none;
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: rgba(21, 27, 36, 0.74);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(18px);
-      }
-
-      .nav {
-        width: min(var(--max), calc(100% - 40px));
-        height: 72px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .avatar {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid rgba(255, 255, 255, 0.38);
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: clamp(22px, 5vw, 72px);
-        color: #cbd2dc;
-        font-size: 13px;
-        font-weight: 700;
-      }
-
-      .nav-links a {
-        opacity: 0.82;
-      }
-
-      .nav-links a:hover,
-      .nav-links .active {
-        color: var(--orange);
-        opacity: 1;
       }
 
       main {
@@ -371,7 +327,16 @@
 
       .education-list {
         display: grid;
-        gap: 26px;
+        gap: 30px;
+      }
+
+      .edu-time {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 17px;
+        font-weight: 650;
+        line-height: 1.35;
       }
 
       .school {
@@ -416,17 +381,6 @@
       }
 
       @media (max-width: 900px) {
-        .nav {
-          height: auto;
-          min-height: 68px;
-          gap: 18px;
-        }
-
-        .nav-links {
-          gap: 14px;
-          font-size: 11px;
-        }
-
         .hero {
           min-height: auto;
           padding-top: 54px;
@@ -452,20 +406,6 @@
       }
 
       @media (max-width: 560px) {
-        .nav {
-          width: min(100% - 28px, var(--max));
-          align-items: flex-start;
-          flex-direction: column;
-          padding: 16px 0;
-        }
-
-        .nav-links {
-          width: 100%;
-          justify-content: space-between;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
         .hero,
         .content {
           width: min(100% - 28px, var(--max));
@@ -495,20 +435,6 @@
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a href="https://linacui.framer.website/" aria-label="返回首页">
-          <img class="avatar" src="https://framerusercontent.com/images/gXTgKJst3tEQ6mZaqTqmq5rTY.png?width=928&height=1039" alt="Lina Cui avatar" />
-        </a>
-        <div class="nav-links">
-          <a class="active" href="#">简历 /RESUME</a>
-          <a href="https://linacui.framer.website/#list">作品 /WORKS</a>
-          <a href="https://linacui.framer.website/photos">影像集 /PHOTOGRAPHS</a>
-          <a href="https://linacui.framer.website/contact">联系 /CONTACT</a>
-        </div>
-      </nav>
-    </header>
-
     <main>
       <section class="hero">
         <div>
@@ -671,16 +597,19 @@
             <article class="education">
               <div class="education-list">
                 <p>
-                  <span class="school">奥格斯堡应用技术大学</span>
+                  <span class="edu-time">2017.10 - 2019.10</span>
+                  <span class="school">奥格斯堡应用技术大学（德国）</span>
                   <span class="degree">交互媒体系统 / 硕士</span>
                 </p>
                 <p>
-                  <span class="school">包豪斯大学</span>
+                  <span class="edu-time">2016.10 - 2017.06</span>
+                  <span class="school">包豪斯大学（德国）</span>
                   <span class="degree">语言中心 / 德语</span>
                 </p>
                 <p>
+                  <span class="edu-time">2012.09 - 2016.07</span>
                   <span class="school">哈尔滨工业大学</span>
-                  <span class="degree">工业设计 / 本科</span>
+                  <span class="degree">机电工程学院 / 工业设计 / 本科</span>
                 </p>
               </div>
             </article>
